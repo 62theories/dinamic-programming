@@ -4,15 +4,23 @@
 
 using namespace std;
 
+int memo[1000] = {};
+
 int catalan(int n){
-	if(n == 0){
-		return 1;
+	if(memo[n] == 0){
+		if(n == 0){
+			memo[n] = 1;
+			return 1;
+		}
+		int sum = 0;
+		for(int i=0;i<=n-1;i++){
+			sum+= catalan(i) * catalan(n - i - 1);
+		}
+		memo[n] = sum;
+		return sum;	
+	}else{
+		return memo[n];	
 	}
-	int sum = 0;
-	for(int i=0;i<=n-1;i++){
-		sum+= catalan(i) * catalan(n - i - 1);
-	}
-	return sum;
 }
 
 int main(){
