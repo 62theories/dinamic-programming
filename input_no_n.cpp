@@ -1,14 +1,12 @@
+#include <bits/stdc++.h>
 #include <cstdio>
 #include <iostream>
 #include <string> 
 #include <sstream> 
 #include <vector>
-
 using namespace std;
-
 int main(){
 	int cases = 3;
-	
 	cin >> cases;
 	cin >> ws;
 	int nub = 0;	
@@ -36,8 +34,6 @@ int main(){
 		} 
 		cout << "Case " << ++nub << ": " << len << endl;   		
 	}
-	
-	
 }
 
 
